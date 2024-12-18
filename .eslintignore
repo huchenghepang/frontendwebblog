@@ -1,0 +1,15 @@
+/node_modules/
+/dist/
+/lib/
+/config/
+/static/
+/src/utils/uploadfile/
+/src/utils/
+/src/types/
+env.d.ts
+tsconfig.json
+tsconfig.node.json
+auto-imports.d.ts
+vite.config.ts
+vite-env.d.ts
+.eslintrc.cjs

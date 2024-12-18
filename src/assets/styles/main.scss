@@ -1,0 +1,94 @@
+@use "sass:math";
+@use "sass:color";
+
+@use './variable.scss' as *;
+@use './globalclass.scss' as *;
+@use './mixin.scss' as * ;
+
+// 在 :root 中定义一个 CSS 变量
+:root {
+    --screen-width: 100%;  // 默认屏幕宽度
+    background-color: $primary-theme-container-background;
+    overflow-x: hidden;
+    min-height: 100vh;
+    /* 设置笔记的变量背景 */
+    @include ntb_bg_color();
+    /* 管理员界面文章编辑器的高度 */
+    --editor-my-height:$notebook-area-height;
+}
+
+
+@media screen and (max-width: 768px) {
+    :root {
+        font-size: 12px;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* 个人中心 */
+/* 面包屑文字颜色 */
+$bread-crumbs-font-color:#1a1717;
+
+// 判断颜色是否是亮色
+@function is-light($color) {
+  $r: color.channel($color,'red',$space:rgb);
+  $g:color.channel($color,'green',$space:rgb);
+  $b: color.channel($color,'blue',$space:rgb);
+  // 计算相对亮度
+  $luminance: math.div(0.2126 * $r + 0.7152 * $g + 0.0722 * $b, 255);
+  @return $luminance > 0.5; // 如果亮度大于 0.5 则认为是亮色
+}
+  
+  // 生成随机颜色
+  @function random-bg-color() {
+    $red: math.random(255);
+    $green: math.random(255);
+    $blue: math.random(255);
+    @return rgb($red, $green, $blue);
+  }
+  
+  // 生成与文本颜色对比合适的背景色
+  @function generate-contrast-bg($text-color) {
+    $bg-color: random-bg-color();
+  
+    // 确保生成的背景色与文本色有足够的对比度
+    @if is-light($text-color) == is-light($bg-color) {
+      // 显式判断背景色亮度并调整背景色
+      @if is-light($bg-color) {
+        $bg-color: color.scale($bg-color, $lightness: -30%);
+      } @else {
+        $bg-color: color.scale($bg-color, $lightness: 30%);
+      }
+    }
+  
+    @return $bg-color;
+  }
+  
+  // Mixin: 根据数量生成具有随机背景色的类，并指定前缀
+  @mixin generate-random-background($count, $prefix: 'element', $text-color: #000000) {
+    @for $i from 1 through $count {
+      .#{$prefix}-#{$i} {
+        color: $text-color; // 设置文本颜色
+        background-color: generate-contrast-bg($text-color); // 生成与文本颜色对比的背景色
+      }
+    }
+  }
+  
+  // 使用示例：生成 5 个类，类名前缀为 'custom'，文本颜色为白色
+  @include generate-random-background(5, 'custom', #ffffff);
+
+
+  /* 避免移动设置输入框自动放大页面 */
+  input, textarea {
+    -webkit-text-size-adjust: 100%; /* 避免浏览器放大字体 */
+    touch-action: manipulation; /* 禁止双指缩放 */
+  }
+  
+

@@ -1,0 +1,23 @@
+{
+  "id": "4656378",
+  "name": "聊天框",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1120914",
+      "name": "icon_emojo",
+      "font_class": "iconemojo",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "7008981",
+      "name": "picture",
+      "font_class": "picture",
+      "unicode": "e716",
+      "unicode_decimal": 59158
+    }
+  ]
+}

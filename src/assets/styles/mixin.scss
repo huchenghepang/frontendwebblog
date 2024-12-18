@@ -1,0 +1,215 @@
+@use './variable.scss' as *;
+
+/* 主要背景颜色 */
+@mixin bg_main_color(){
+    background-color:$background-color-theme;
+    [data-theme=dark] & {
+        background-color: $background-color-dark-theme;
+    }
+}
+
+/* 次要背景颜色 */
+@mixin bg_sub_color(){
+    background-color:$background-color-sub-theme;
+    [data-theme=dark] & {
+        background-color:$background-color-sub-dark-theme ;
+    }
+}
+
+/* 文字主题颜色 */
+@mixin ft_main_color(){
+    color:$font-color-theme;
+    [data-theme=dark] & {
+        background-color: $font-color-dark-theme;
+    }
+}
+
+/* 激活主题颜色 */
+@mixin ft_act_color(){
+    color: $font-active-color-theme;
+    [data-theme=dark] & {
+        color: $font-active-color-dark-theme;
+    }
+}
+
+/* 导航栏主题颜色 */
+@mixin hd_nav_bc_color(){
+    background-color:$header-background-color;
+    [data-theme=dark] & {
+        background-color: $header-background-color-dark;
+    }
+}
+
+
+/* 激活时候的背景颜色,比如搜索列表 */
+@mixin seach_active_bc_color(){
+  background-color:#7ca0b1; // 浅淡天蓝
+  [data-theme=dark] & {
+    color: #ffffff;
+      background-color: #2c2c3c;
+  }
+}
+
+/* 导航栏字体颜色 */
+@mixin hd_nav_ft_color(){
+    color: $header-title-font-color;
+    [data-theme=dark] & {
+        color: $header-title-font-color-dark;
+    }
+}
+
+/* 笔记的背景颜色 */
+@mixin ntb_bg_color(){
+    --notebook-background-color:#{$notebook-background-color};
+    &[data-theme=dark]{
+        --notebook-background-color: #{$notebook-background-dark-color};
+    }
+}
+
+
+/* 笔记的字体颜色 */
+@mixin ntb_ft_color(){
+    color: $notebook-font-color;
+    [data-theme=dark] & {
+        color: $notebook-font-dark-color;
+    }
+}
+
+/* 笔记的代码区域颜色 */
+@mixin ntb_code_bg_color(){
+    background-color:$code-background-color;
+    [data-theme=dark] & {
+        background-color: $code-background-dark-color;
+    }
+}
+/* 代码区域字体颜色 */
+
+@mixin ntb_code_ft_color(){
+    color: $code-font-color;
+    [data-theme=dark] & {
+        color: $code-font-dark-color;
+    }
+}
+
+/* 目录的背景颜色 */
+@mixin toc_ft_color(){
+  color: $toc-font-color;
+  [data-theme=dark] & {
+      color: $toc-font-dark-color;
+  }
+}
+
+/* 边框的颜色 */
+// 2. 定义根据主题切换的混合 (mixin)
+@mixin border_color() {
+    // 选择主题并设置默认边框颜色
+    border-color: $light-border-color;  // 默认是白天模式
+  
+    // 根据主题切换边框颜色
+    [data-theme="dark"] & {
+      border-color: $dark-border-color;  // 暗色主题下的边框颜色
+    }
+  
+    // 激活状态下边框颜色
+    &:focus, &:active {
+      border-color: $light-border-active-color;  // 默认是白天模式的激活边框颜色
+  
+      // 根据主题切换激活状态下的边框颜色
+      [data-theme="dark"] & {
+        border-color: $dark-border-active-color;  // 暗色主题下的激活状态边框颜色
+      }
+    }
+  }
+
+/* 单行代码区域的样式 */
+// 2. 定义根据主题切换的混合 (mixin)
+@mixin single_code_style() {
+    cursor: pointer;
+    padding: 2px 4px; /* 内边距 */
+    border-radius: 3px; /* 圆角效果 */
+    font-size: 1rem;
+  
+    /* 默认是白天模式的样式 */
+    background-color: $light-code-bg;
+    color: $light-code-color;
+    box-shadow: 0px 2px 4px $light-code-shadow;
+  
+    /* 黑夜模式样式 */
+    [data-theme="dark"] & {
+      background-color: $dark-code-bg;
+      color: $dark-code-color;
+      box-shadow: 0px 2px 4px $dark-code-shadow;
+    }
+  }
+
+/* 文章标题的样式 */
+  @mixin article_title_style() {
+    /* 默认是白天模式的样式 */
+    color: $light-title-color;
+    // background-color: $light-title-bg;
+  
+    /* 黑夜模式样式 */
+    [data-theme="dark"] & {
+      color: $dark-title-color;
+    //   background-color: $dark-title-bg;
+    }
+  }
+
+
+  /* 自定义表格 */
+  // 2. 定义根据主题切换的混合 (mixin)
+@mixin table_style() {
+    width: 100%;
+    border-collapse: collapse;
+    th,
+    td {
+      padding: $padding;
+      border: 1px solid $light-table-border-color;  // 默认白天模式边框
+      text-align: left;
+    }
+  
+    th {
+      background-color: $light-table-header-bg;  // 默认白天模式表头背景色
+    }
+  
+    tr:nth-child(even) {
+      background-color: $light-table-even-bg;  // 默认白天模式偶数行背景色
+    }
+  
+    tr:hover {
+      background-color: $light-table-hover-bg;  // 默认白天模式悬浮背景色
+    }
+  
+    /* 黑夜模式样式 */
+    [data-theme="dark"] & {
+      th,
+      td {
+        color: $table-dark-text-color;
+        border: 1px solid $dark-table-border-color;  // 黑夜模式边框
+      }
+  
+      th {
+        background-color: $dark-table-header-bg;  // 黑夜模式表头背景色
+      }
+  
+      tr:nth-child(even) {
+        background-color: $dark-table-even-bg;  // 黑夜模式偶数行背景色
+      }
+  
+      tr:hover {
+        background-color: $dark-table-hover-bg;  // 黑夜模式悬浮背景色
+      }
+    }
+  }
+
+
+  /* 通用调整样式 */
+
+@mixin filter_invert() {
+    [data-theme=dark] & {
+        filter: invert(1); // 有时间还是手动调整适配夜间模式吧 这容易给用户带来眩晕感
+        // filter: hue-rotate(180deg); /* 可调整旋转的角度 */
+        // mix-blend-mode: difference;
+
+    }
+}  

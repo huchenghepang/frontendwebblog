@@ -1,0 +1,135 @@
+
+/* 页面的背景(主要) */
+$background-color-theme:#fafafa;
+$background-color-dark-theme:#333;
+
+/* 背景颜色次要规范 */
+$background-color-sub-theme:#e5e5e5;
+$background-color-sub-dark-theme:#201f1f;
+
+
+/* 字体颜色规范（默认) */
+$font-color-theme: #666;//字体主题颜色默认(网易)
+$font-color-dark-theme: #ddd;//字体主题颜色(夜间模式)
+
+/* 这里可能用不到等记得删除 */
+$primary-theme-main-background: #3498db;
+$primary-theme-main-text: #ffffff;
+$primary-theme-container-background: #fafafa;
+
+
+/* 字体颜色规范(激活) */
+$font-active-color-theme: #d43c33;//字体主题颜色默认(网易红)
+$font-active-color-dark-theme: #b9b099;//字体主题颜色(夜间模式)
+
+
+
+/*  顶部导航栏的背景色 */
+$header-background-color: #57abe2;
+$header-background-color-dark:#333;
+
+/* 顶部导航栏的标题颜色 */
+$header-title-font-color: #333333;
+$header-title-font-color-dark:#ddd;
+
+
+/* 顶部导航栏的高度 */
+$header-height: 60px;
+/*  汉堡菜单偏移 */
+$hamburger-offset-x: 130px;
+
+/* 笔记的背景色 */
+$notebook-background-color: #fff7e6;
+$notebook-background-dark-color: #141414;
+
+/* 笔记的字体颜色 */
+$notebook-font-color: #6b6b68;
+$notebook-font-dark-color: #ddd9d1;
+
+/* 目录的文字颜色 */
+$toc-font-color:#333;
+$toc-font-dark-color:#fafafa;
+
+/* 代码区域颜色 */
+$code-background-color: #292d3e;
+$code-background-dark-color: #292d3e;
+$code-font-color: #292d3e;
+$code-font-dark-color: #292d3e;
+
+// 笔记区域的宽度
+$notebook-area-width: 800px;
+
+/* 管理员界面文章编辑器的高度 */
+$notebook-area-height:700px;
+
+/* 自定义笔记内容渲染时候的表格显示 */
+/* 自定义表格 */
+/* 变量定义 */
+$border-color: #686161;
+$background-color-light: #f4f4f4;
+$background-color-even: #f9f9f9;
+$background-color-hover: #e2e2e2;
+$padding: 10px;
+
+
+/* 元素激活状态下边框的颜色 */// 1. 定义颜色变量
+$light-border-color: #ccc;  // 白天模式下边框颜色
+$dark-border-color: #444;   // 黑夜模式下边框颜色
+
+$light-border-active-color: #3498db;  // 白天模式激活状态下的边框颜色
+$dark-border-active-color: #1abc9c;   // 黑夜模式激活状态下的边框颜色
+
+
+/* 单行代码区域的样式 */
+$light-code-bg: #f5f5f5;  // 白天模式下的背景色
+$dark-code-bg:#cdd1d3;   // 黑夜模式下的背景色
+
+$light-code-color: #d14;   // 白天模式下的文字颜色
+$dark-code-color: #6e4e66; // 黑夜模式下的文字颜色
+
+$light-code-shadow: rgba(0, 0, 0, 0.1);  // 白天模式下的阴影效果
+$dark-code-shadow: rgba(255, 255, 255, 0.1);  // 黑夜模式下的阴影效果
+
+/* 文章标题的样式 */
+// 1. 定义颜色变量
+$light-title-color: #333;  // 白天模式下的标题颜色
+$dark-title-color: #ecf0f1; // 黑夜模式下的标题颜色
+
+$light-title-bg: #ffffff;  // 白天模式下的背景颜色
+$dark-title-bg: #34495e;   // 黑夜模式下的背景颜色
+
+
+/* 自定义表格在白天和黑夜下的效果 */
+$light-table-border-color: #333;  // 白天模式下的表格边框颜色
+$dark-table-border-color: #e0dcdc;   // 黑夜模式下的表格边框颜色
+
+$light-table-bg: #fafafa;         // 白天模式下的表格背景色
+$dark-table-bg: #2c3e50;          // 黑夜模式下的表格背景色
+
+$light-table-header-bg: #f5f5f5;  // 白天模式下的表头背景色
+$dark-table-header-bg: #5791a0;   // 黑夜模式下的表头背景色
+
+$light-table-even-bg: #f9f9f9;    // 白天模式下偶数行背景色
+$dark-table-even-bg: #2c3e50;     // 黑夜模式下偶数行背景色
+
+$light-table-hover-bg: #f1f1f1;   // 白天模式下悬浮行背景色
+$dark-table-hover-bg: #3e4a59;    // 黑夜模式下悬浮行背景色
+
+$table-light-text-color: #333;          // 白天模式下的文本颜色
+$table-dark-text-color: #ecf0f1;        // 黑夜模式下的文本颜色
+
+$padding: 10px;  // 单元格内边距
+
+
+
+
+
+
+
+
+
+
+
+
+
+
