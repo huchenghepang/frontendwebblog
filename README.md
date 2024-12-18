@@ -50,7 +50,7 @@
 
 列出项目所用的主要技术及工具：
 
-- **前端**：Vue.js 3、Vite、Pinia、Axios、Element Plus、Vue Router、Socket.io
+- **前端**：Vue.js 3、Vite、Pinia、Axios、Element Plus、Vue Router、Socket.io、SCSS
 - **其他工具**：ESLint、TypeScript
 
 ---
@@ -152,3 +152,5 @@ project/
 - npm
 - pnpm
 - socket.io
+- kangc/v-md-editor
+- markdown-it
